@@ -1,0 +1,21 @@
+﻿@using EPiServer.Shell.Navigation;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body class="epi-workspace">
+    @Html.AntiForgeryToken()
+    @Html.CreatePlatformNavigationMenu()
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div @Html.Raw(Html.ApplyPlatformNavigation())>
+        <h1>Hello world!</h1>
+    </div>
+</body>
+</html>

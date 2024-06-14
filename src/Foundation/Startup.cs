@@ -36,6 +36,7 @@ using Optimizely.Labs.MarketingAutomationIntegration.ODP;
 using System.IO;
 using TinymceDamPicker;
 using UNRVLD.ODP.VisitorGroups.Initilization;
+using Foundation.CmsPlugin.Middleware;
 
 namespace Foundation
 {
@@ -95,6 +96,8 @@ namespace Foundation
             services.AddDetection();
             services.AddTinyMceConfiguration();
             services.AddTinyMceSpellChecker();
+
+            services.AddCmsPlugin(_configuration);
 
             //site specific
             services.AddEmbeddedLocalization<Startup>();

@@ -98,4 +98,7 @@
 	  <Folder Include="Infrastructure\Kpi\" />
 	  <Folder Include="wwwroot\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Foundation.CmsPlugin\Foundation.CmsPlugin.csproj" />
+  </ItemGroup>
 </Project>
