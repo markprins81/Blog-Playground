@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html lang="en" class="@(contextModeResolver.CurrentMode == ContextMode.Edit ? "editMode" : "")">
 <head>
+    <base href="~/" />
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -40,6 +42,10 @@
     <link rel="icon" href="~/icons/episerver.png" type="image/x-icon" />
     <link rel="shortcut icon" href="~/icons/episerver.png" type="image/x-icon" />
     <link href="~/scss/main.min.css" rel="stylesheet" type="text/css" />
+
+    <component type="typeof(Microsoft.AspNetCore.Components.Web.HeadOutlet)"
+        render-mode="ServerPrerendered" />
+
     @RenderSection("AdditionalStyles", required: false)
     @Html.RequiredClientResources("Header")
     @if (Model.CurrentContent is not null)
@@ -54,5 +60,7 @@
 </head>
 <body>
     @RenderBody()
+
+    <script src="~/_framework/blazor.server.js"></script>
 </body>
 </html>

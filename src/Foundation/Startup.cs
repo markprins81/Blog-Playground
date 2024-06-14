@@ -101,6 +101,10 @@ namespace Foundation
             services.AddCmsPlugin(_configuration);
             services.AddProductMarkets(_configuration);
 
+            services.AddRazorComponents()
+                .AddInteractiveServerComponents()
+                .AddCircuitOptions(o => o.DetailedErrors = true);
+
             //site specific
             services.AddEmbeddedLocalization<Startup>();
             services.Configure<OrderOptions>(o => o.DisableOrderDataLocalization = true);
@@ -272,6 +276,8 @@ namespace Foundation
             app.UseGetaCategories();
             app.UseGetaCategoriesFind();
 
+            
+
             app.UseAnonymousId();
             app.UseStaticFiles();
             app.UseRouting();
@@ -285,6 +291,9 @@ namespace Foundation
                 endpoints.MapControllers();
                 endpoints.MapRazorPages();
                 endpoints.MapContent();
+
+                endpoints.MapBlazorHub();
+                endpoints.MapFallbackToController("Blazor", "Home");
             });
         }
     }
