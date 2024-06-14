@@ -37,6 +37,7 @@ using System.IO;
 using TinymceDamPicker;
 using UNRVLD.ODP.VisitorGroups.Initilization;
 using Foundation.CmsPlugin.Middleware;
+using Arlanet.Optimizely.ProductMarkets.Middleware;
 
 namespace Foundation
 {
@@ -98,6 +99,7 @@ namespace Foundation
             services.AddTinyMceSpellChecker();
 
             services.AddCmsPlugin(_configuration);
+            services.AddProductMarkets(_configuration);
 
             //site specific
             services.AddEmbeddedLocalization<Startup>();
